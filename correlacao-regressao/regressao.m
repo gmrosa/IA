@@ -1,3 +1,4 @@
+# Autores: Guilherme Murilo da Rosa, Guilherme Sautner, Jean Pereira
 % Calcula a regressão
 function [b0 b1 yt] = regressao(x, y)
   yMedia = mean(y);

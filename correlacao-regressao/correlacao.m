@@ -1,3 +1,4 @@
+# Autores: Guilherme Murilo da Rosa, Guilherme Sautner, Jean Pereira
 %  mede o grau de relacionamento linear entre valores x e y
 function r = correlacao(x, y)
   yMedia = mean(y);
