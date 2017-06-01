@@ -51,22 +51,35 @@ plot(x, yt, "k");
 kEQM = (sum((y.-yt).^2) / size(y,1));
 disp('EQP preto');
 disp(kEQM);
-# 8 amarelo
+# 8 magenta
 n = 8;
 b = polyfit(x, y, n);
-b0 = b(8);
-b1 = b(7);
-b2 = b(6);
-b3 = b(5);
-b4 = b(4);
-b5 = b(3);
-b6 = b(2);
-b7 = b(1);
-yt = (b0+(b1*x)+(b2*x.^2)+(b3*x.^3)+(b4*x.^4)+(b5*x.^5)+(b6*x.^6)+(b7*x.^7));
-plot(x, yt, "y");
+b0 = b(9);
+b1 = b(8);
+b2 = b(7);
+b3 = b(6);
+b4 = b(5);
+b5 = b(4);
+b6 = b(3);
+b7 = b(2);
+b8 = b(1);
+yt = (b0+(b1*x)+(b2*x.^2)+(b3*x.^3)+(b4*x.^4)+(b5*x.^5)+(b6*x.^6)+(b7*x.^7)+(b8*x.^8));
+plot(x, yt, "m");
 # EQM= (sum(residuo)) / size(y,1)
 # residuo = (y - ?)
 yEQM = (sum((y.-yt).^2) / size(y,1));
 disp('EQP amarelo');
 disp(yEQM);
 hold off;
+
+# 10% para teste
+tamanhoTeste = round(length(x)*0.1);
+ind = randperm(length(x));
+indTeste = ind(1:tamanhoTeste);
+indTreinamento = ind(tamanhoTeste+1:end);
+# dados para teste
+dadoTesteX = x(indTeste);
+dadoTesteY = y(indTeste);
+# os outros 90% é para treinamento
+dadoTreinamentoX = x(indTreinamento);
+dadoTreinamentoY = y(indTreinamento);
